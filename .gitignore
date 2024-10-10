@@ -1,3 +1,4 @@
 **/.DS_Store
 ollama-tools
 test.ipynb
+**/__pycache__/
