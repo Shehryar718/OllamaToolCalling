@@ -15,3 +15,23 @@ def get_flight_times(departure: str, arrival: str) -> str:
 
 def add_numbers(a: int, b: int) -> str:
   return str(int(a) + int(b))
+
+
+functions = {
+    'get_flight_times': {
+        'description': 'Get the flight times between two cities',
+        'params': {
+            'departure': {'type': 'string', 'description': 'The departure city (airport code)'},
+            'arrival': {'type': 'string', 'description': 'The arrival city (airport code)'},
+        },
+        'func': get_flight_times,
+    },
+    'add_numbers': {
+        'description': 'Adds two numbers together.',
+        'params': {
+            'a': {'type': 'int', 'description': 'The first number to add'},
+            'b': {'type': 'int', 'description': 'The second number to add'},
+        },
+        'func': add_numbers,
+    }
+}
