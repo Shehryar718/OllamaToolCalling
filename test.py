@@ -3,6 +3,8 @@ from tools import functions
 from utils import register_function
 import argparse
 
+import json
+
 def main(question: str, verbose: bool):
     client = ollama.Client()
     model = "llama3.2"
@@ -43,11 +45,11 @@ def main(question: str, verbose: bool):
     final_response = client.chat(model=model, messages=messages)
     print(final_response['message']['content'])
 
-    # If verbose flag is set, print final response and messages
+    # If verbose flag is set, pretty print final response and messages
     if verbose:
         print("\nVerbose Output:")
-        print("Final Response:", final_response)
-        print("Messages:", messages)
+        print("Final Response:", json.dumps(final_response, indent=4))
+        print("Messages:", json.dumps(messages, indent=4))
 
     return final_response, messages
 
@@ -62,7 +64,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '-v',
-        '--verbose',
+        '--verbose', 
         action='store_true', 
         help='Enable verbose mode to print the final response and messages.'
     )
