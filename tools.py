@@ -1,7 +1,8 @@
 import json
+from typing import Dict
 
 def get_flight_times(departure: str, arrival: str) -> str:
-  flights = {
+  flights: Dict[str, Dict[str, str]] = {
     'NYC-LAX': {'departure': '08:00 AM', 'arrival': '11:30 AM', 'duration': '5h 30m'},
     'LAX-NYC': {'departure': '02:00 PM', 'arrival': '10:30 PM', 'duration': '5h 30m'},
     'LHR-JFK': {'departure': '10:00 AM', 'arrival': '01:00 PM', 'duration': '8h 00m'},
@@ -15,7 +16,6 @@ def get_flight_times(departure: str, arrival: str) -> str:
 
 def add_numbers(a: int, b: int) -> str:
   return str(int(a) + int(b))
-
 
 functions = {
     'get_flight_times': {

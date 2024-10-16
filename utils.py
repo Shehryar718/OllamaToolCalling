@@ -1,9 +1,8 @@
-from typing import Dict
+from typing import Dict, Any
 
-# A utility function to register any number of functions
 def register_function(
     func_name: str, description: str, params: Dict[str, Dict[str, str]]
-) -> Dict[str, Dict[str, Dict[str, Dict[str, str]]]]:
+) -> Dict[str, Any]:
     """
     A utility function to register any number of functions.
 
